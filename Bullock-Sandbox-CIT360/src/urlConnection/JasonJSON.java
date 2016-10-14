@@ -10,52 +10,63 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import org.json.JSONObject;
-import java.net.URLConnection;
+import org.json.JSONArray;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import org.json.JSONObject;
-
 
 /**
  *
  * @author BULLOJP
  */
 public class JasonJSON {
-        public static void main(String[] args) throws Exception{
-		//URL Url = new URL("http://api.wunderground.com/api/22b4347c464f868e/conditions/q/Utah/Alpine.json");
-              //  URL Url = new URL("http://api.wunderground.com/api/22b4347c464f868e/conditions/q/Utah/Alpine.json");
-              //  URL Url = new URL("http://api.wunderground.com/api/22b4347c464f868e/conditions/q/Utah/Alpine.json");
-                URL Url = new URL("http://api.usno.navy.mil/eclipses/solar?year=2024");
-		
-		try{
-			HttpURLConnection urlCn = (HttpURLConnection) Url.openConnection();
-    //read stream
-			InputStream in = urlCn.getInputStream();
-			BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+    	public static void main(String[] args) throws Exception{
+            
+                            URL Url = new URL("http://api.wunderground.com/api/22b4347c464f868e/conditions/q/Colorado/COS.json");
+                          // URL Url = new URL("https://api.darksky.net/forecast/08959bb1e2c7eae0f3d1fafb5d538032/38.886,-104.7201");
+                               
+                            try {
+                                
+                            
+                            HttpURLConnection urlCon = (HttpURLConnection) Url.openConnection();
+                            
+    //          This part will read the data returned thru HTTP and load it into memory
+			InputStream stream = urlCon.getInputStream();
+			BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
 			StringBuilder result = new StringBuilder();
 			String line;
 			while((line = reader.readLine()) != null) {
 			    result.append(line);
 			}
 			
-			//Process output json object
+			// The next lines read certain parts of the JSON data and print it out on the screen
 			JSONObject json = new JSONObject(result.toString());
-			JSONObject currObs = (JSONObject) json.get("current_observation");
+			
+                        JSONObject coloradoInfo = (JSONObject) json.get("current_observation");
+                       
 
-            String theOutput = "Weather\t\t\t: " + currObs.get("weather")
-                    + "\nTemperature\t\t: " + currObs.get("temperature_string")
-                    + "\nWindchill\t\t: " + currObs.get("feelslike_string")
-                    + "\nRelative Humidity\t: " + currObs.get("blative_humidity")
-                    + "\nWind\t\t\t: " + currObs.get("wind_string")
-                    + "\nPressure\t\t: " + currObs.get("pressure_mb");
+                        String wunderGround = "Data obtained from: " + coloradoInfo.getJSONObject("image").getString("title") +
+                                "\nLink\t\t: " + coloradoInfo.getJSONObject("image").getString("link") +
+                                "\nCity\t\t: " +  coloradoInfo.getJSONObject("display_location").getString("city") +
+                                "\nState\t\t: " + coloradoInfo.getJSONObject("display_location").getString("state_name") +
+                                "\nTime\t\t: " + coloradoInfo.get("observation_ime_rfc822") +
+                                "\nTemperature\t\t: " + coloradoInfo.get("temperature_string") +
+                                "\nWindchill\t\t: " + coloradoInfo.get("windchill_string") +
+                                "\nRelative Humidity\t: " + coloradoInfo.get("relative_humidity") +
+                                "\nWind\t\t\t: " + coloradoInfo.get("wind_string") +
+                                "\nWind Direction\t\t: " + coloradoInfo.get("wind_dir") +
+                                "\nBarometer Pressure\t\t: " + coloradoInfo.get("pressure_in");
 			
 			System.out.println("\nWeather Conditions:");
 			System.out.println("-------------------------------------------------");
-			System.out.println(theOutput);
+			System.out.println(wunderGround);
 		}
 		catch(IOException e){
 			System.out.println("It seems that a network connection is not available, or some other error occured trying to access the provided url. "
 					+ "\nURL: " + Url.toString() + "\nError Message: " + e.toString());
-		}
-	}
+                }
+                            
+                             
+                            }
 }
+
+

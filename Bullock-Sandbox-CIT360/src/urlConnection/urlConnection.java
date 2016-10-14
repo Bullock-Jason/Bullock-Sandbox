@@ -18,10 +18,7 @@ import org.json.JSONObject;
  */
 public class urlConnection {
     public static void main(String[] args) throws Exception{
-		//URL Url = new URL("http://api.wunderground.com/api/22b4347c464f868e/conditions/q/Utah/Alpine.json");
-              //  URL Url = new URL("http://api.wunderground.com/api/22b4347c464f868e/conditions/q/Utah/Alpine.json");
-              //  URL Url = new URL("http://api.wunderground.com/api/22b4347c464f868e/conditions/q/Utah/Alpine.json");
-                URL Url = new URL("http://www.d11.org");
+                URL Url = new URL("http://data.colorado.gov/resource/4ykn-tg5h.json?entitystatus=Good%20Standing&principalzipcode=80923");
 		
 		try{
 			HttpURLConnection urlCn = (HttpURLConnection) Url.openConnection();
