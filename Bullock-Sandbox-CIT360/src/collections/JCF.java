@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package urlConnection;
+package collections;
 
 
+import urlConnection.*;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -16,8 +17,8 @@ import org.json.JSONObject;
  *
  * @author BULLOJP
  */
-public class urlConnection {
-    public static void main(String[] args) throws Exception{
+public class JCF {
+   public static void main(String[] args) throws Exception{
                 URL Url = new URL("http://data.colorado.gov/resource/4ykn-tg5h.json?entitystatus=Good%20Standing&principalzipcode=80923");
 		
     try{
@@ -49,5 +50,5 @@ public class urlConnection {
 			System.out.println("Some Error Somewhere is breaking your code. Figure it out! The site probably can't be reached right now"
 					+ "\nURL: " + Url.toString() + "\nError Message: " + e.toString());
 		}
-    }
+   }
 }
