@@ -22,7 +22,9 @@ public class JasonJSON {
     	public static void main(String[] args) throws Exception{
             
                             URL Url = new URL("http://api.wunderground.com/api/22b4347c464f868e/conditions/q/Colorado/COS.json");
-                          // URL Url = new URL("https://api.darksky.net/forecast/08959bb1e2c7eae0f3d1fafb5d538032/38.886,-104.7201");
+                          //This next URL is still being played with. Some of the formatting is hard to figure out, but Wunderground 
+                              //writes a perfectly formatted JSON file that is easy to read with Java.
+                        // URL Url = new URL("https://api.darksky.net/forecast/08959bb1e2c7eae0f3d1fafb5d538032/38.886,-104.7201");
                                
                             try {
                                 
@@ -30,6 +32,7 @@ public class JasonJSON {
                             HttpURLConnection urlCon = (HttpURLConnection) Url.openConnection();
                             
     //          This part will read the data returned thru HTTP and load it into memory
+    //          I have this code left over from my CIT260 project.
 			InputStream stream = urlCon.getInputStream();
 			BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
 			StringBuilder result = new StringBuilder();
@@ -44,11 +47,11 @@ public class JasonJSON {
                         JSONObject coloradoInfo = (JSONObject) json.get("current_observation");
                        
 
-                        String wunderGround = "Data obtained from: " + coloradoInfo.getJSONObject("image").getString("title") +
+                        String wunderGround = "Data downloaded from: " + coloradoInfo.getJSONObject("image").getString("title") +
                                 "\nLink\t\t: " + coloradoInfo.getJSONObject("image").getString("link") +
                                 "\nCity\t\t: " +  coloradoInfo.getJSONObject("display_location").getString("city") +
                                 "\nState\t\t: " + coloradoInfo.getJSONObject("display_location").getString("state_name") +
-                                "\nTime\t\t: " + coloradoInfo.get("observation_ime_rfc822") +
+                                "\nTime\t\t: " + coloradoInfo.get("observation_time_rfc822") +
                                 "\nTemperature\t\t: " + coloradoInfo.get("temperature_string") +
                                 "\nWindchill\t\t: " + coloradoInfo.get("windchill_string") +
                                 "\nRelative Humidity\t: " + coloradoInfo.get("relative_humidity") +
@@ -56,13 +59,13 @@ public class JasonJSON {
                                 "\nWind Direction\t\t: " + coloradoInfo.get("wind_dir") +
                                 "\nBarometer Pressure\t\t: " + coloradoInfo.get("pressure_in");
 			
-			System.out.println("\nWeather Conditions:");
-			System.out.println("-------------------------------------------------");
+			System.out.println("\nColorado Springs Weather:");
+			System.out.println("____________________________________");
 			System.out.println(wunderGround);
 		}
 		catch(IOException e){
-			System.out.println("It seems that a network connection is not available, or some other error occured trying to access the provided url. "
-					+ "\nURL: " + Url.toString() + "\nError Message: " + e.toString());
+			System.out.println("***ERROR*******************ERROR********************. "
+					+ "\nURL: " + Url.toString() + "\nERROR: " + e.toString());
                 }
                             
                              

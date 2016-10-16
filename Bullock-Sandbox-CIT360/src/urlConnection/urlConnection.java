@@ -29,17 +29,17 @@ public class urlConnection {
 			// Collection example using Map and Set
 			//get list of header fields and a set of the header keys
 			System.out.println("\nJava Collection Framework Code Showing Map and Set:");
-			Map<String, List<String>> headMap = urlCn.getHeaderFields();
-			Set<String> headerField = headMap.keySet();
-			TreeMap<String, List<String>> hvTM = new TreeMap<String, List<String>>();
+			Map<String,List<String>> headMap = urlCn.getHeaderFields();
+			Set<String> urlHeader = headMap.keySet();
+			TreeMap<String,List<String>> hvtm = new TreeMap<String,List<String>>();
 			
 			System.out.println("Web Server Header details: ");
 			//display all headers and values
-			for(String key : headerField) {
-				System.out.println("Info: " + key + " Value: " + headMap.get(key));
+			for(String theKey : urlHeader) {
+				System.out.println("Info: "+theKey+" Value: "+ headMap.get(theKey));
 				// load treeMap
-				if(key != null){
-					hvTM.put(key, headMap.get(key));
+				if(theKey != null){
+					hvtm.put(theKey,headMap.get(theKey));
 				}
 			}
 			
@@ -47,11 +47,11 @@ public class urlConnection {
                         //
 			System.out.println("\nJava Collection Framework Code Showing TreeMap:");
 	        //add key-value pair to TreeMap
-	        System.out.println(hvTM);
+	        System.out.println(hvtm);
 			
 	        //display the contents using an iterator
 	        /* Display content using Iterator*/
-	        Set set = hvTM.entrySet();
+	        Set set = hvtm.entrySet();
 	        Iterator iterator = set.iterator();
 	        while(iterator.hasNext()) {
 	           Map.Entry mentry = (Map.Entry)iterator.next();
@@ -61,7 +61,7 @@ public class urlConnection {
 			
                 }
                 catch(IOException e){
-			System.out.println("There is an error somewhere"
+			System.out.println("Some Error Somewhere is breaking your code. Figure it out! The site probably can't be reached right now"
 					+ "\nURL: " + Url.toString() + "\nError Message: " + e.toString());
 		}
     }
