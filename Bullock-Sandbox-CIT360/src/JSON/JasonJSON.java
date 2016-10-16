@@ -3,16 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package JSON;
+package urlConnection;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import org.json.JSONObject;
-import org.json.JSONArray;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import org.json.JSONObject;
 
 /**
  *
