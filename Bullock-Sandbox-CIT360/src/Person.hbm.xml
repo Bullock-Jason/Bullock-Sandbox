@@ -1,13 +1,16 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-  <class name="Person" table="PERSON">
+    <class name="Person" table="PERSON">
         <meta attribute="class-description"> This class contains people data </meta>
-<id name="id" column="ID" type="int">
+        <id name="id" column="PID" type="int">
             <generator class="assigned"/> <!--Generates a sequential ID in the database-->
-             </id>
-             <property name="name" column="name" type="string"/>
-             <property name="phone" column="phone" type="string"/>
-             <property name="email" column="email" type="string"/>
-         </class>
+        </id>
+        <property name="ID" column="ID" type="int"/>
+        <property name="name" column="name" type="string"/>
+        <property name="phone" column="phone" type="string"/>
+        <property name="email" column="email" type="string"/>
+    </class>
 </hibernate-mapping>
+
