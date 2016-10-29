@@ -10,10 +10,10 @@ package MVC;
  * @author BULLOJP
  */
 public class View {
-   public void printDetails(String Name, String RollNo){
+   public void printDetails(String Name, String IdNo){
       System.out.println(": ");
       System.out.println("Name: " + Name);
-      System.out.println("Roll No: " + RollNo);
+      System.out.println("Student ID Number: " + IdNo);
    }
 }
     

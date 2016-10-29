@@ -26,15 +26,15 @@ public class Control {
       return model.getName();		
    }
 
-   public void setStudentRollNo(String rollNo){
-      model.setRollNo(rollNo);		
+   public void setStudentIdNo(String IdNo){
+      model.setIdNo(IdNo);		
    }
 
-   public String getStudentRollNo(){
-      return model.getRollNo();		
+   public String getStudentIdNo(){
+      return model.getIdNo();		
    }
 
    public void updateView(){				
-      view.printDetails(model.getName(), model.getRollNo());
+      view.printDetails(model.getName(), model.getIdNo());
    }
 }

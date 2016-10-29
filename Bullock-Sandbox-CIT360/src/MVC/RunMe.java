@@ -9,7 +9,7 @@ package MVC;
  *
  * @author BULLOJP
  */
-public class Demo {
+public class RunMe {
    public static void main(String[] args) {
 
       //fetch student record based on his roll no from the database
@@ -23,15 +23,15 @@ public class Demo {
       controller.updateView();
 
       //update model data
-      controller.setName("John");
+      controller.setName("");
 
       controller.updateView();
    }
 
    private static Model retriveFromDatabase(){
       Model student = new Model();
-      student.setName("Robert");
-      student.setRollNo("10");
+      student.setName("Jason Bullock");
+      student.setIdNo("1234567890");
       return student;
    }
 }

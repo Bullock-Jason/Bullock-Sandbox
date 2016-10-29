@@ -10,15 +10,15 @@ package MVC;
  * @author BULLOJP
  */
 public class Model {
-   private String rollNo;
+   private String IdNo;
    private String name;
    
-   public String getRollNo() {
-      return rollNo;
+   public String getIdNo() {
+      return IdNo;
    }
    
-   public void setRollNo(String rollNo) {
-      this.rollNo = rollNo;
+   public void setIdNo(String IdNo) {
+      this.IdNo = IdNo;
    }
    
    public String getName() {
