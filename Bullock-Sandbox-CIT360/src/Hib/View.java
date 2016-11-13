@@ -51,7 +51,7 @@ public class View {
 			System.out.println();
 			System.out.println("Main");
 			System.out.println("	1. Insert a new person");
-			//System.out.println("	2. Do Nothing");
+			System.out.println("	2. Do Nothing");
 			System.out.println("	3. Quit application");
 			System.out.print("Please enter 1, 2, or 3: ");
 
@@ -71,7 +71,7 @@ public class View {
 				AddUser();
 				break;
 			case 2:
-				// For Future Use
+				System.out.println("Pick a valid option");
 				
 				break;
 			case 3:
@@ -119,7 +119,7 @@ public class View {
 			switch (selection) {
 			case 1:
 				// Call the addUser method, then return to the User menu
-				InsertPersonController.AddUser();
+				ControllerInsertJSON.AddUser();
 				break;
 			case 2:
 				// Call the listUsers method, then return to the User menu

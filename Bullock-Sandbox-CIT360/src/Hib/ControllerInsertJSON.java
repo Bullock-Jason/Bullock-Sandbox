@@ -16,7 +16,7 @@ import org.hibernate.Transaction;
  * @author BULLOJP
  */
 
-public class InsertPersonController {
+public class ControllerInsertJSON {
    static void AddUser() {
         // moved session factory to Model
    // Session session = DBConnect.getSessionFactory().getCurrentSession();
@@ -25,8 +25,8 @@ public class InsertPersonController {
        Jason_Json person = new Jason_Json();
        person.setJson_id(0003);
        person.setLax_json("Jason");
-       person.setStrict_json("Jason@byui.edu");
-       person.setUnique_json("7184445454");
+       person.setStrict_json("Jason@gmail.com");
+       person.setUnique_json("8005551212");
        //to save to database
        Model.addPerson(person);
       // session.flush();
