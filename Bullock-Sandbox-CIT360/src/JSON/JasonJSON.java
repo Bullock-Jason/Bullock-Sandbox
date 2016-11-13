@@ -46,17 +46,29 @@ public class JasonJSON {
                         JSONObject coloradoInfo = (JSONObject) json.get("current_observation");
                        
 
-                        String wunderGround = "Data downloaded from: " + coloradoInfo.getJSONObject("image").getString("title") +
-                                "\nLink\t\t: " + coloradoInfo.getJSONObject("image").getString("link") +
-                                "\nCity\t\t: " +  coloradoInfo.getJSONObject("display_location").getString("city") +
-                                "\nState\t\t: " + coloradoInfo.getJSONObject("display_location").getString("state_name") +
-                                "\nTime\t\t: " + coloradoInfo.get("observation_time_rfc822") +
-                                "\nTemperature\t\t: " + coloradoInfo.get("temperature_string") +
-                                "\nWindchill\t\t: " + coloradoInfo.get("windchill_string") +
-                                "\nRelative Humidity\t: " + coloradoInfo.get("relative_humidity") +
-                                "\nWind\t\t\t: " + coloradoInfo.get("wind_string") +
-                                "\nWind Direction\t\t: " + coloradoInfo.get("wind_dir") +
-                                "\nBarometer Pressure\t\t: " + coloradoInfo.get("pressure_in");
+                        String wunderGround = "Data downloaded from: " + 
+                                
+                                coloradoInfo.getJSONObject("image").getString("title") +
+                                "\nLink\t\t: " + 
+                                coloradoInfo.getJSONObject("image").getString("link") +
+                                "\nCity\t\t: " +  
+                                coloradoInfo.getJSONObject("display_location").getString("city") +
+                                "\nState\t\t: " + 
+                                coloradoInfo.getJSONObject("display_location").getString("state_name") +
+                                "\nTime\t\t: " + 
+                                coloradoInfo.get("observation_time_rfc822") +
+                                "\nTemperature\t\t: " +
+                                coloradoInfo.get("temperature_string") +
+                                "\nWindchill\t\t: " + 
+                                coloradoInfo.get("windchill_string") +
+                                "\nRelative Humidity\t: " + 
+                                coloradoInfo.get("relative_humidity") +
+                                "\nWind\t\t\t: " + 
+                                coloradoInfo.get("wind_string") +
+                                "\nWind Direction\t\t: " + 
+                                coloradoInfo.get("wind_dir") +
+                                "\nBarometer Pressure\t\t: " +
+                                coloradoInfo.get("pressure_in");
 			
 			System.out.println("\nColorado Springs Weather:");
 			System.out.println("____________________________________");
