@@ -17,7 +17,9 @@ import org.hibernate.Transaction;
  */
 
 public class ControllerInsertJSON {
-   static void AddUser() {
+  
+    
+    static void AddUser() {
         // moved session factory to Model
    // Session session = DBConnect.getSessionFactory().getCurrentSession();
   //  Transaction transaction = session.beginTransaction();
@@ -35,9 +37,11 @@ public class ControllerInsertJSON {
       System.out.println("USER ADDED!!!!!");
   //
                           }
- /* 
+    
+   		
+ 
 static void listOwners() {
-		List<Jason_Json> userList = Model.getUserFromDB();
+		List<Jason_Json> userList = Model.queryAllOwners();
 		
 		System.out.println();
 		System.out.println("Owners in Database");
@@ -54,7 +58,6 @@ static void listOwners() {
 			
 }
 
+}
 
-}*/
-   
 }

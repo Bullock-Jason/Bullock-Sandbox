@@ -48,7 +48,7 @@ public class DBControl
 
 		//config.setProperty("hibernate.hbm2ddl.auto", "create-drop");
 
-		config.setProperty("hibernate.show_sql", "false");
+		config.setProperty("hibernate.show_sql", "true");
 
 		config.setProperty("hibernate.transaction.factory_class", "org.hibernate.transaction.JDBCTransactionFactory");
 

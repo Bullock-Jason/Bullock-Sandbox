@@ -105,7 +105,7 @@ public class View {
 			System.out.println();
 			System.out.println("User Management");
 			System.out.println("	1. Add User");
-			//System.out.println("	2. List All Users");
+			System.out.println("	2. List All Users");
 			System.out.println("	3. Return to Main Menu");
 			System.out.print("Please enter your selection (1-6): ");
 
@@ -123,8 +123,8 @@ public class View {
 				break;
 			case 2:
 				// Call the listUsers method, then return to the User menu
-			System.out.println("Nothing to see here");
-                                //InsertPersonController.listOwners();
+			//System.out.println("Nothing to see here");
+                                 ControllerInsertJSON.listOwners();
 				break;
 			case 3:
 				// Return to the Main Menu

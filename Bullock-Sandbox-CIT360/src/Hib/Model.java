@@ -15,6 +15,8 @@ import org.hibernate.Transaction;
  * @author BULLOJP
  */
 public class Model {
+    
+    
      static void addPerson(Jason_Json addPerson){
         Session session = DBControl.getSessionFactory().getCurrentSession();
         Transaction transaction = session.beginTransaction();
@@ -25,7 +27,21 @@ public class Model {
       // session.flush();
        //session.close(); 
      }
-  
+   
+     static List<Jason_Json> queryAllOwners() {
+		Session session = DBControl.getSessionFactory().getCurrentSession();
+		Transaction transaction = session.beginTransaction();
+
+		Query userQuery = session.createQuery("Select j from jason_json as j");
+
+		@SuppressWarnings("unchecked")
+		List<Jason_Json> user_list = userQuery.list();
+
+		transaction.commit();
+
+		return user_list;
+	} 
+     
 }
 
 
