@@ -53,6 +53,8 @@ public class DBControl
 		config.setProperty("hibernate.transaction.factory_class", "org.hibernate.transaction.JDBCTransactionFactory");
 
 		config.setProperty("hibernate.current_session_context_class", "thread");
+                
+                config.addAnnotatedClass(Jason_Json.class);
 		
 
 		/*

@@ -17,7 +17,9 @@ import org.json.JSONObject;
  *
  * @author BULLOJP
  */
-public class JasonJSON {
+    public abstract class JasonJSON implements Runnable
+{
+
     	public static void main(String[] args) throws Exception{
             
                             URL Url = new URL("http://api.wunderground.com/api/22b4347c464f868e/conditions/q/Colorado/COS.json");
@@ -82,5 +84,3 @@ public class JasonJSON {
                              
                             }
 }
-
-

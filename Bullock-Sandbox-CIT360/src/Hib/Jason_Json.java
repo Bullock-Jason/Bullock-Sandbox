@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "jason_json")
+@Table(name = "db_jason_json")
 public class Jason_Json {
 //-----------------//
 	// Column mappings //
