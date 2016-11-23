@@ -54,14 +54,14 @@ public class DBControl
 
 		config.setProperty("hibernate.current_session_context_class", "thread");
                 
-                config.addAnnotatedClass(Jason_Json.class);
+                config.addAnnotatedClass(DB_jason_json.class);
 		
 
 		/*
 		 *  Add your classes here that you want to match your database tables
 		 */
 
-		config.addAnnotatedClass(Jason_Json.class);
+		config.addAnnotatedClass(DB_jason_json.class);
 
 
 		StandardServiceRegistryBuilder serviceRegistryBuilder = new StandardServiceRegistryBuilder().applySettings(config.getProperties());

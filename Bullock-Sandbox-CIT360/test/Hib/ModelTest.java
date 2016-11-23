@@ -43,7 +43,7 @@ public class ModelTest {
     @Test
     public void testAddPerson() {
         System.out.println("addPerson");
-        Jason_Json addPerson = null;
+        DB_jason_json addPerson = null;
         Model.addPerson(addPerson);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");

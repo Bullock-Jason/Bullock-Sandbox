@@ -38,39 +38,39 @@ public class Jason_JsonTest {
     }
 
     /**
-     * Test of getJson_id method, of class Jason_Json.
+     * Test of getJson_id method, of class DB_jason_json.
      */
     @Test
     public void testGetJson_id() {
         System.out.println("getJson_id");
-        Jason_Json instance = new Jason_Json();
+        DB_jason_json instance = new DB_jason_json();
         Integer expResult = null;
-        Integer result = instance.getJson_id();
+        String result = instance.getJson_id();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of setJson_id method, of class Jason_Json.
+     * Test of setJson_id method, of class DB_jason_json.
      */
     @Test
     public void testSetJson_id() {
         System.out.println("setJson_id");
-        Integer json_id = null;
-        Jason_Json instance = new Jason_Json();
+        String json_id = null;
+        DB_jason_json instance = new DB_jason_json();
         instance.setJson_id(json_id);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of getId method, of class Jason_Json.
+     * Test of getId method, of class DB_jason_json.
      */
     @Test
     public void testGetId() {
         System.out.println("getId");
-        Jason_Json instance = new Jason_Json();
+        DB_jason_json instance = new DB_jason_json();
         Integer expResult = null;
         Integer result = instance.getId();
         assertEquals(expResult, result);
@@ -79,25 +79,25 @@ public class Jason_JsonTest {
     }
 
     /**
-     * Test of setId method, of class Jason_Json.
+     * Test of setId method, of class DB_jason_json.
      */
     @Test
     public void testSetId() {
         System.out.println("setId");
         Integer id = null;
-        Jason_Json instance = new Jason_Json();
+        DB_jason_json instance = new DB_jason_json();
         instance.setId(id);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of getJsonId method, of class Jason_Json.
+     * Test of getJsonId method, of class DB_jason_json.
      */
     @Test
     public void testGetJsonId() {
         System.out.println("getJsonId");
-        Jason_Json instance = new Jason_Json();
+        DB_jason_json instance = new DB_jason_json();
         Integer expResult = null;
         Integer result = instance.getJsonId();
         assertEquals(expResult, result);
@@ -106,25 +106,25 @@ public class Jason_JsonTest {
     }
 
     /**
-     * Test of setJsonId method, of class Jason_Json.
+     * Test of setJsonId method, of class DB_jason_json.
      */
     @Test
     public void testSetJsonId() {
         System.out.println("setJsonId");
         Integer id = null;
-        Jason_Json instance = new Jason_Json();
+        DB_jason_json instance = new DB_jason_json();
         instance.setJsonId(id);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of getLax_json method, of class Jason_Json.
+     * Test of getLax_json method, of class DB_jason_json.
      */
     @Test
     public void testGetLax_json() {
         System.out.println("getLax_json");
-        Jason_Json instance = new Jason_Json();
+        DB_jason_json instance = new DB_jason_json();
         String expResult = "";
         String result = instance.getLax_json();
         assertEquals(expResult, result);
@@ -133,25 +133,25 @@ public class Jason_JsonTest {
     }
 
     /**
-     * Test of setLax_json method, of class Jason_Json.
+     * Test of setLax_json method, of class DB_jason_json.
      */
     @Test
     public void testSetLax_json() {
         System.out.println("setLax_json");
         String lax_json = "";
-        Jason_Json instance = new Jason_Json();
+        DB_jason_json instance = new DB_jason_json();
         instance.setLax_json(lax_json);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of getStrict_json method, of class Jason_Json.
+     * Test of getStrict_json method, of class DB_jason_json.
      */
     @Test
     public void testGetStrict_json() {
         System.out.println("getStrict_json");
-        Jason_Json instance = new Jason_Json();
+        DB_jason_json instance = new DB_jason_json();
         String expResult = "";
         String result = instance.getStrict_json();
         assertEquals(expResult, result);
@@ -160,25 +160,25 @@ public class Jason_JsonTest {
     }
 
     /**
-     * Test of setStrict_json method, of class Jason_Json.
+     * Test of setStrict_json method, of class DB_jason_json.
      */
     @Test
     public void testSetStrict_json() {
         System.out.println("setStrict_json");
         String strict_json = "";
-        Jason_Json instance = new Jason_Json();
+        DB_jason_json instance = new DB_jason_json();
         instance.setStrict_json(strict_json);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of getUnique_json method, of class Jason_Json.
+     * Test of getUnique_json method, of class DB_jason_json.
      */
     @Test
     public void testGetUnique_json() {
         System.out.println("getUnique_json");
-        Jason_Json instance = new Jason_Json();
+        DB_jason_json instance = new DB_jason_json();
         String expResult = "";
         String result = instance.getUnique_json();
         assertEquals(expResult, result);
@@ -187,13 +187,13 @@ public class Jason_JsonTest {
     }
 
     /**
-     * Test of setUnique_json method, of class Jason_Json.
+     * Test of setUnique_json method, of class DB_jason_json.
      */
     @Test
     public void testSetUnique_json() {
         System.out.println("setUnique_json");
         String unique_json = "";
-        Jason_Json instance = new Jason_Json();
+        DB_jason_json instance = new DB_jason_json();
         instance.setUnique_json(unique_json);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");

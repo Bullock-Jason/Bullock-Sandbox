@@ -9,7 +9,9 @@ package Hib;
  *
  * @author BULLOJP
  */
+import java.net.MalformedURLException;
 import java.util.Scanner;
+import org.json.JSONException;
 
 public class View {
   
@@ -20,7 +22,7 @@ public class View {
 	public View() {
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws MalformedURLException, JSONException {
 		View view = new View();
 		boolean quit = false;
 		
@@ -41,7 +43,7 @@ public class View {
 	/*
 	 * Main Menu
 	 */
-	private boolean main() {
+	private boolean main() throws MalformedURLException, JSONException {
 		boolean quit = false;
 
 		while (!quit) {
@@ -50,8 +52,8 @@ public class View {
 			// Print the main menu
 			System.out.println();
 			System.out.println("Main");
-			System.out.println("	1. Insert a new person");
-			System.out.println("	2. Do Nothing");
+			System.out.println("	1. People Menu");
+			System.out.println("	2. Do That");
 			System.out.println("	3. Quit application");
 			System.out.print("Please enter 1, 2, or 3: ");
 
@@ -71,7 +73,7 @@ public class View {
 				AddUser();
 				break;
 			case 2:
-				System.out.println("Pick a valid option");
+				ControllerInsertJSON.doThat();
 				
 				break;
 			case 3:
@@ -124,7 +126,7 @@ public class View {
 			case 2:
 				// Call the listUsers method, then return to the User menu
 			//System.out.println("Nothing to see here");
-                                 ControllerInsertJSON.listOwners();
+                                 ControllerInsertJSON.listUsers();
 				break;
 			case 3:
 				// Return to the Main Menu

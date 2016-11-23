@@ -1,4 +1,4 @@
-package Hib;
+    package Hib;
 // Generated Oct 25, 2016 6:06:39 PM by Hibernate Tools 4.3.1
 
 
@@ -11,8 +11,8 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "db_jason_json")
-public class Jason_Json {
+@Table(name = "DB_jason_json")
+public class DB_jason_json {
 //-----------------//
 	// Column mappings //
 	//-----------------//
@@ -22,7 +22,7 @@ public class Jason_Json {
 	private Integer id;
     
         @Column(name="json_id")
-        private Integer json_id;
+        private String json_id;
 
 	@Column(name="lax_json")
 	private String lax_json;
@@ -37,10 +37,10 @@ public class Jason_Json {
 	//--------------//
 	// Constructors //
 	//--------------//
-	public Jason_Json () {
+	public DB_jason_json () {
 		
 	}
-        	public Jason_Json(String lax, String strict, String unique, Integer jid) {
+        	public DB_jason_json(String lax, String strict, String unique, String jid) {
 		this.json_id = jid;
 		this.lax_json = lax;
 		this.strict_json = strict;
@@ -48,11 +48,11 @@ public class Jason_Json {
 	
 	}
 
-    public Integer getJson_id() {
+    public String getJson_id() {
         return json_id;
     }
 
-    public void setJson_id(Integer json_id) {
+    public void setJson_id(String json_id) {
         this.json_id = json_id;
     }
 

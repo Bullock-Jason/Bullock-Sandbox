@@ -17,7 +17,7 @@ import org.hibernate.Transaction;
 public class Model {
     
     
-     static void addPerson(Jason_Json addPerson){
+     static void addPerson(DB_jason_json addPerson){
         Session session = DBControl.getSessionFactory().getCurrentSession();
         Transaction transaction = session.beginTransaction();
        
@@ -28,14 +28,14 @@ public class Model {
        //session.close(); 
      }
    
-     static List<Jason_Json> queryAllOwners() {
+     static List<DB_jason_json> queryAllUsers() {
 		Session session = DBControl.getSessionFactory().getCurrentSession();
 		Transaction transaction = session.beginTransaction();
 
-		Query userQuery = session.createQuery("Select j from jason_json as j");
+		Query getUser = session.createQuery("Select j from jason_json as j");
 
 		@SuppressWarnings("unchecked")
-		List<Jason_Json> user_list = userQuery.list();
+		List<DB_jason_json> user_list = getUser.list();
 
 		transaction.commit();
 

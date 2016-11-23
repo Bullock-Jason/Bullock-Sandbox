@@ -9,8 +9,18 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.StringWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -41,12 +51,34 @@ import org.json.JSONObject;
 			while((line = reader.readLine()) != null) {
 			    result.append(line);
 			}
-			
-			// The next lines read certain parts of the JSON data and print it out on the screen
-			JSONObject json = new JSONObject(result.toString());
+                        
+                        
+
+                        // The next lines read certain parts of the JSON data and print it out on the screen
+			//Creates the JSONObject object and loads the JSON file from the URLConnection
+                        //Into a StringWriter object. I am printing this out in raw format just so I can see it doing something
+                        
+                        
+                        JSONObject json = new JSONObject(result.toString());
 			
                         JSONObject coloradoInfo = (JSONObject) json.get("current_observation");
-                       
+                        
+                        StringWriter out = new StringWriter();
+                        json.write(out);
+                        String jsonTxt = json.toString();
+                        System.out.print(jsonTxt);
+                        
+                        List<String> list = new ArrayList<>();
+                        JSONArray array = json.getJSONArray(jsonTxt);
+                        System.out.print(jsonTxt);
+                        
+                        
+                       // for (int i =0;i<array.length();i++){
+                         //list.add(array.getJSONObject(i).getString("current_observation"));
+                        //}
+                        
+                        
+                        
 
                         String wunderGround = "Data downloaded from: " + 
                                 
@@ -75,6 +107,8 @@ import org.json.JSONObject;
 			System.out.println("\nColorado Springs Weather:");
 			System.out.println("____________________________________");
 			System.out.println(wunderGround);
+                        
+                       
 		}
 		catch(IOException e){
 			System.out.println("***ERROR*******************ERROR********************. "
@@ -82,5 +116,5 @@ import org.json.JSONObject;
                 }
                             
                              
-                            }
-}
+        }
+    }
