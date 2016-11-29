@@ -47,13 +47,13 @@ public class ControllerInsertJSON {
     
    		
  
-static void listUsers() {
-		List<DB_jason_json> userList = Model.queryAllUsers();
+static void listWeatherStats() {
+		List<DB_jason_json> userList = Model.queryWeatherStatsFromDB();
 		
 		System.out.println();
-		System.out.println("Users in Database");
-		System.out.printf("%-5s%-16s%-16s%-20s\n","ID","First Name","Last Name","Gender");
-		System.out.printf("%-5s%-16s%-16s%-20s\n","--","----------","---------","------");
+		System.out.println("Columns in Database");
+		System.out.printf("%-5s%-16s%-16s%-20s\n","City","State","Temp","Wind_Speed");
+		System.out.printf("%-5s%-16s%-16s%-20s\n","---------------","----------","---------","------");
 		
 		Iterator<DB_jason_json> ownerIterator = userList.iterator();
 		
@@ -122,6 +122,7 @@ static void listUsers() {
                            //session.close(); 
                           // System.out.println(person);
                         System.out.println("JSON ADDED!!!!!");
+                        
                      
                         
                         }

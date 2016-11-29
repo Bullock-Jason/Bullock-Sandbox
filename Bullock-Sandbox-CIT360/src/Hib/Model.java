@@ -28,7 +28,7 @@ public class Model {
        //session.close(); 
      }
    
-     static List<DB_jason_json> queryAllUsers() {
+     static List<DB_jason_json> queryWeatherStatsFromDB() {
 		Session session = DBControl.getSessionFactory().getCurrentSession();
 		Transaction transaction = session.beginTransaction();
 

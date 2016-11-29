@@ -46,7 +46,7 @@ public class DBControl
 		 * your data classes listed below.  This is generally a bad idea for security reasons.
 		 */
 
-		//config.setProperty("hibernate.hbm2ddl.auto", "create-drop");
+		config.setProperty("hibernate.hbm2ddl.auto", "create-drop");
 
 		config.setProperty("hibernate.show_sql", "true");
 

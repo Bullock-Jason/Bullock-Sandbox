@@ -53,7 +53,7 @@ public class View {
 			System.out.println();
 			System.out.println("Main");
 			System.out.println("	1. People Menu");
-			System.out.println("	2. Do That");
+			System.out.println("	2. JSON Example");
 			System.out.println("	3. Quit application");
 			System.out.print("Please enter 1, 2, or 3: ");
 
@@ -124,16 +124,16 @@ public class View {
 				ControllerInsertJSON.AddUser();
 				break;
 			case 2:
-				// Call the listUsers method, then return to the User menu
+				// Call the listWeatherStats method, then return to the User menu
 			//System.out.println("Nothing to see here");
-                                 ControllerInsertJSON.listUsers();
+                                 ControllerInsertJSON.listWeatherStats();
 				break;
 			case 3:
 				// Return to the Main Menu
 				returnToMain = true;
 				break;
 			default:
-				// A number other than 1-6 was entered.
+				// A number other than 1-3 was entered.
 				// Prompt for input again.
 				System.out.println();
 				System.out.println("Enter a number!.");
