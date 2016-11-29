@@ -35,6 +35,7 @@ public class Model {
 		Query getUser = session.createQuery("Select j from jason_json as j");
 
 		@SuppressWarnings("unchecked")
+                        //Java Collections LIST example
 		List<DB_jason_json> user_list = getUser.list();
 
 		transaction.commit();
