@@ -45,6 +45,7 @@ public class DB_jason_json {
 		this.lax_json = lax;
 		this.strict_json = strict;
 		this.unique_json = unique;
+             
 	
 	}
 

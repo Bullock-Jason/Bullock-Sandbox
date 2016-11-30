@@ -16,7 +16,13 @@ import org.hibernate.Transaction;
  */
 public class Model {
     
-    
+    static void addUser(DB_jason_user addUser){
+        Session session = DBControl.getSessionFactory().getCurrentSession();
+        Transaction transaction = session.beginTransaction();
+       
+        session.save(addUser);
+        transaction.commit();
+    }
      static void addPerson(DB_jason_json addPerson){
         Session session = DBControl.getSessionFactory().getCurrentSession();
         Transaction transaction = session.beginTransaction();
@@ -32,7 +38,7 @@ public class Model {
 		Session session = DBControl.getSessionFactory().getCurrentSession();
 		Transaction transaction = session.beginTransaction();
                              
-                Query getUser = session.createQuery("Select u from DB_jason_json as u");
+                Query getUser = session.createQuery("Select j from DB_jason_json as j");
 
 		@SuppressWarnings("unchecked")
                         //Java Collections LIST example
@@ -42,6 +48,22 @@ public class Model {
 
 		return user_list;
 	} 
+     
+     static List<DB_jason_user> queryUsersInDB() {
+		Session session = DBControl.getSessionFactory().getCurrentSession();
+		Transaction transaction = session.beginTransaction();
+                             
+                Query getUser = session.createQuery("Select u from DB_jason_user as u");
+
+		@SuppressWarnings("unchecked")
+                        //Java Collections LIST example
+		List<DB_jason_user> user_list = getUser.list();
+
+		transaction.commit();
+
+		return user_list;
+	} 
+     
      
 }
 

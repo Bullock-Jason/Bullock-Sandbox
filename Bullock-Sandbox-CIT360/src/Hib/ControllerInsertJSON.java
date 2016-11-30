@@ -31,13 +31,14 @@ public class ControllerInsertJSON {
    // Session session = DBConnect.getSessionFactory().getCurrentSession();
   //  Transaction transaction = session.beginTransaction();
         
-       DB_jason_json person = new DB_jason_json();
-       person.setJson_id("0003");
-       person.setLax_json("Jason");
-       person.setStrict_json("Jason@gmail.com");
-       person.setUnique_json("8005551212");
+       DB_jason_user user = new DB_jason_user();
+      //Auto-incremented value, not needed 
+       //person.setUserID(0001);
+       user.setName("Jason");
+       user.setEmail("Jason@gmail.com");
+       user.setPhone("7194202230");
        //to save to database
-       Model.addPerson(person);
+       Model.addUser(user);
       // session.flush();
        //session.close(); 
       // System.out.println(person);
@@ -52,16 +53,17 @@ static void listWeatherStats() {
 		
 		System.out.println();
 		System.out.println("Columns in Database");
-		System.out.printf("%-5s%-16s%-16s%-20s\n","City","State","Temp","Wind_Speed");
-		System.out.printf("%-5s%-16s%-16s%-20s\n","---------------","----------","---------","------");
+		System.out.printf("%-15s%-16s%-16s%-20s\n","Temp         ","City       ","State/Country     "," Wind Speed");
+		System.out.printf("%-15s%-16s%-16s%-20s\n","---------------","----------","---------","------");
 		
 		Iterator<DB_jason_json> ownerIterator = userList.iterator();
 		
 		while(ownerIterator.hasNext()) {
 			
 			DB_jason_json element = ownerIterator.next();
-			System.out.printf("%-5s%-16s%-16s%-20s\n",element.getId(),element.getJsonId(),
-					element.getLax_json(),element.getStrict_json());
+			System.out.printf("%-5s%-16s%-16s%-20s\n",element.getJson_id(),
+					element.getLax_json(),element.getStrict_json(),
+                                        element.getUnique_json());
 			
 }
 
@@ -70,8 +72,8 @@ static void listWeatherStats() {
  static void doThat() throws MalformedURLException, JSONException{
                        
            
-           //URL Url = new URL("http://api.wunderground.com/api/4228dd85f026caea/conditions/q/Colorado/COS.json");
-              URL Url = new URL("http://api.wunderground.com/api/4228dd85f026caea/conditions/q/Mexico/Cancun.json");
+          URL Url = new URL("http://api.wunderground.com/api/4228dd85f026caea/conditions/q/Colorado/COS.json");
+          //    URL Url = new URL("http://api.wunderground.com/api/4228dd85f026caea/conditions/q/Mexico/Cancun.json");
                           //This next URL is still being played with. Some of the formatting is hard to figure out, but Wunderground 
                               //writes a perfectly formatted JSON file that is easy to read with Java.
                         // URL Url = new URL("https://api.darksky.net/forecast/08959bb1e2c7eae0f3d1fafb5d538032/38.886,-104.7201");
@@ -138,6 +140,26 @@ static void listWeatherStats() {
        
    }
        }
+ static void listUsers() {
+		List<DB_jason_user> userList = Model.queryUsersInDB();
+		
+		System.out.println();
+		System.out.println("People in Database");
+		System.out.printf("%-5s%-16s%-16s%-20s\n","ID","Name","Email Address","Phone");
+		System.out.printf("%-5s%-16s%-16s%-20s\n","---------------","----------","---------","------");
+		
+		Iterator<DB_jason_user> ownerIterator = userList.iterator();
+		
+		while(ownerIterator.hasNext()) {
+			
+			DB_jason_user element = ownerIterator.next();
+			System.out.printf("%-5s%-16s%-16s%-20s\n",element.getUserID(),element.getName(),
+					element.getEmail(),element.getPhone());
+			
+}
+                
+ }
+ 
 }
 
 

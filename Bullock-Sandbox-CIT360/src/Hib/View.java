@@ -11,6 +11,8 @@ package Hib;
  */
 import java.net.MalformedURLException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.json.JSONException;
 
 public class View {
@@ -73,8 +75,7 @@ public class View {
 				AddUser();
 				break;
 			case 2:
-				ControllerInsertJSON.doThat();
-				
+                                AddWeather();				
 				break;
 			case 3:
 				// Quit
@@ -126,7 +127,7 @@ public class View {
 			case 2:
 				// Call the listWeatherStats method, then return to the User menu
 			//System.out.println("Nothing to see here");
-                                 ControllerInsertJSON.listWeatherStats();
+                                 ControllerInsertJSON.listUsers();
 				break;
 			case 3:
 				// Return to the Main Menu
@@ -144,7 +145,61 @@ public class View {
                 
                 
                 }
+
+    private void AddWeather() {
+       boolean returnToMain = false;
+
+		while (!returnToMain) {
+			Integer selection = null;
+
+			// Print menu
+			System.out.println();
+			System.out.println("JSON Example");
+			System.out.println("	1. HTTP Get and Add to DB");
+			System.out.println("	2. List Weather");
+			System.out.println("	3. Return to Main Menu");
+			System.out.print("Please enter your selection (1-6): ");
+
+			// Attempt to read user input
+			try {
+				selection = Integer.parseInt(userInput.nextLine());
+			} catch (NumberFormatException e) {
+				// Don't do anything. It will fall to the default case.
+			}
+
+			switch (selection) {
+			case 1:
+                        {
+                            try {
+                                // Call the addUser method, then return to the User menu
+                                ControllerInsertJSON.doThat();
+                            } catch (MalformedURLException ex) {
+                                Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+                            } catch (JSONException ex) {
+                                Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+				break;
+			case 2:
+				// Call the listWeatherStats method, then return to the User menu
+			//System.out.println("Nothing to see here");
+                                 ControllerInsertJSON.listWeatherStats();
+				break;
+			case 3:
+				// Return to the Main Menu
+				returnToMain = true;
+				break;
+			default:
+				// A number other than 1-3 was entered.
+				// Prompt for input again.
+				System.out.println();
+				System.out.println("Enter a number!.");
+				break;
+    }
+                }
+    }
 }
+
 		
 
 	
