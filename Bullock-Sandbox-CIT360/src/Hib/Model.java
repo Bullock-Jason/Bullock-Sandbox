@@ -31,8 +31,8 @@ public class Model {
      static List<DB_jason_json> queryWeatherStatsFromDB() {
 		Session session = DBControl.getSessionFactory().getCurrentSession();
 		Transaction transaction = session.beginTransaction();
-
-		Query getUser = session.createQuery("Select j from jason_json as j");
+                             
+                Query getUser = session.createQuery("Select u from DB_jason_json as u");
 
 		@SuppressWarnings("unchecked")
                         //Java Collections LIST example
